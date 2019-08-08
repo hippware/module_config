@@ -16,7 +16,8 @@ defmodule ModuleConfig do
 
       @impl true
       def config(opts \\ []) do
-        Confex.fetch_env!(@module_config_otp_app, __MODULE__)
+        @module_config_otp_app
+        |> Confex.get_env(__MODULE__, [])
         |> Keyword.merge(opts)
         |> Enum.into(%{})
       end
@@ -30,7 +31,7 @@ defmodule ModuleConfig do
       def put_config(key, value) do
         config =
           @module_config_otp_app
-          |> Application.get_env(__MODULE__)
+          |> Application.get_env(__MODULE__, [])
           |> Keyword.put(key, value)
 
         Application.put_env(@module_config_otp_app, __MODULE__, config)
