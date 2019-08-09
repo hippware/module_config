@@ -47,8 +47,7 @@ defmodule ModuleConfig.MixProject do
 
   defp description do
     """
-    DawdleDB uses Dawdle and SQS to capture change notifications from
-    PostgreSQL.
+    Simplifies working with module specific configuration.
     """
   end
 
@@ -56,7 +55,7 @@ defmodule ModuleConfig.MixProject do
     [
       maintainers: ["Phil Toland"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/hippware/dawdle_db"}
+      links: %{"GitHub" => "https://github.com/hippware/module_config"}
     ]
   end
 
